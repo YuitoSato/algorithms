@@ -8,3 +8,6 @@ for n in l:
     k += 1
     avg = new_avg
     print(new_avg)
+
+    
+  # new_avg = (avg * (k/ (k+1))) + (n / (k+1))
