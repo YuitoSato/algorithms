@@ -9,5 +9,5 @@ for n in l:
     avg = new_avg
     print(new_avg)
 
-    
-  # new_avg = (avg * (k/ (k+1))) + (n / (k+1))
+    # ダトさん案
+    # new_avg = (avg * (k/ (k+1))) + (n / (k+1))
