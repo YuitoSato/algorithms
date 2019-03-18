@@ -26,10 +26,28 @@ def get_value(hash_table, key):
             return child[1]
 
 
+def delete(hash_table, key):
+    index = int(hashlib.sha256(key.encode('utf-8')).hexdigest(), 16) % len(hash_table)
+    content = hash_table[index]
+
+    if content[0] == key:
+        hash_table[index] = None
+        return
+
+    for child in content:
+        if child[0] == key:
+            child[1] = None
+            return
+
 hash_table1 = [None] * 10000
 
 for i in range(1000):
     set_value(hash_table1, str(i), i)
+
+for i in range(1000):
+    print(get_value(hash_table1, str(i)))
+
+delete(hash_table1, "999")
 
 for i in range(1000):
     print(get_value(hash_table1, str(i)))
